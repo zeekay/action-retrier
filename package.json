@@ -20,7 +20,7 @@
     "build": "tsc --project ./tsconfig.build.json",
     "build:codegen": "npx convex codegen --component-dir ./src/component && npm run build",
     "build:clean": "rm -rf dist *.tsbuildinfo && npm run build:codegen",
-    "typecheck": "tsc --noEmit && tsc -p example/convex",
+    "typecheck": "node_modules/tsgo/bin/tsc --noEmit && node_modules/tsgo/bin/tsc -p example/convex",
     "lint": "eslint .",
     "all": "run-p -r 'dev:*' 'test:watch'",
     "test": "vitest run --typecheck",
@@ -76,6 +76,7 @@
     "npm-run-all2": "8.0.4",
     "path-exists-cli": "2.0.0",
     "prettier": "3.8.1",
+    "tsgo": "npm:typescript@7.0.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.56.0",
     "vitest": "3.2.4"
